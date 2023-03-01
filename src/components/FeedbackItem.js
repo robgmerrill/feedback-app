@@ -4,17 +4,15 @@ import {FaTimes} from 'react-icons/fa'
 
 import React from 'react'
 
-function FeedbackItem({item}) {
+function FeedbackItem({item, handleDelete}) {
 
-  function handleClick (item) {
-    console.log(item.id)
-  }
+  
 
   return (
     <Card>
       <div className='num-display'>{item.rating}</div>
       <div className='text-display'>{item.text}</div>
-      <button onClick={() => handleClick(item)} className='close'><FaTimes color='purple'></FaTimes></button>
+      <button onClick={() => handleDelete(item.id)} className='close'><FaTimes color='purple'></FaTimes></button>
     </Card>
   )
 }
