@@ -8,10 +8,7 @@ function FeedbackList({handleDelete}) {
 
     const context = useContext(FeedbackContext)
     const feedback = context.feedback
-    
 
-
-    console.log('feedback list', feedback)
     if (!feedback.length || feedback.length === 0) {
         return <p>No Feedback Yet...</p>
     }
@@ -31,14 +28,6 @@ function FeedbackList({handleDelete}) {
           </AnimatePresence>
         </div>
       )
-
-//     return (
-//     <div className='feedback-list'>
-//       {feedback.map((item) => (
-//         <FeedbackItem key={item.id} item={item} handleDelete={handleDelete}/>
-//       ))}
-//     </div>
-//   )
 }
 
 export default FeedbackList

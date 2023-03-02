@@ -47,7 +47,6 @@ function FeedbackForm() {
     <Card>
         <form onSubmit={handleSubmit}>
             <h2>How would you rate your service with us?</h2>
-            {/* @todo -rating select component */}
             <RatingsSelect select={(rating) => setRating(rating)} />
             <div className='input-group'>
                 <input type='text' placeholder='Write a review' onChange={(e) => handleTextChange(e.target.value)} value={text} />

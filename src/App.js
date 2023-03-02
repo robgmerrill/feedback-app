@@ -37,8 +37,8 @@ function App() {
             <Header text="Feedback UI" />
             <div className="container">
                 <FeedbackForm />
-                <FeedbackStats feedback={feedback} />
-                <FeedbackList feedback={feedback} />
+                <FeedbackStats />
+                <FeedbackList />
             </div>
         </FeedbackProvider>
         
