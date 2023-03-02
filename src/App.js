@@ -9,28 +9,6 @@ import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
     const [feedback, setFeedback] = useState(FeedbackData)
-    console.log(feedback)
-
-    // const deleteFeedback = (id) => {
-    //     if (window.confirm('Are you sure you want to delete?')) {
-    //         console.log('App', id)
-    //         const arrayToFilter = feedback.filter(fItem => fItem.id !== id)
-    //         console.log(arrayToFilter);
-    //         setFeedback(arrayToFilter);
-    //     }
-        
-    // }
-
-    // const addFeedback = (feedbackObject) => {
-    //     console.log(feedbackObject)
-    //     feedbackObject.id = uuidv4();
-    //     console.log([...feedback, feedbackObject])
-    //     setFeedback(prev => {
-    //         return [feedbackObject, ...prev];
-    //     })
-    // }
-
-    console.log("feedback", feedback)
 
     return (
         <FeedbackProvider>
