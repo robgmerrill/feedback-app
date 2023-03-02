@@ -8,7 +8,6 @@ import FeedbackForm from './components/FeedbackForm';
 import { FeedbackProvider } from './context/FeedbackContext';
 
 function App() {
-    const [feedback, setFeedback] = useState(FeedbackData)
 
     return (
         <FeedbackProvider>
