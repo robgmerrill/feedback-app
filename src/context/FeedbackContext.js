@@ -1,5 +1,6 @@
 import { createContext, useState } from "react";
 import {v4 as uuidv4} from 'uuid'
+import { useEffect } from "react";
 
 
 // create a context 
@@ -7,23 +8,22 @@ const FeedbackContext = createContext();
 
 // just a like a component takes in children
 export const FeedbackProvider = ({children}) => {
-    const [feedback, setFeedback] = useState([
-        {
-            id: 1, 
-            text: 'This is feedback item 1',
-            rating: 4
-        }, 
-        {
-            id: 2, 
-            text: 'This is feedback item 2',
-            rating: 7
-        }, 
-        {
-            id: 3, 
-            text: 'This is feedback item 3',
-            rating: 5
-        }, 
-    ])
+    const [isLoading, setIsLoading] = useState(true)
+    const [feedback, setFeedback] = useState([])
+
+    useEffect( () => {
+        fetchFeedback();
+    }, [])
+
+    const fetchFeedback = async() => {
+        const response = await fetch('http://localhost:5000/feedback?_sort=id&_order=desc')
+        console.log(response)
+        const data = await response.json()
+        console.log(data)
+        setFeedback(data)
+        setIsLoading(false)
+    }
+
 
     // Delete feedback
     const deleteFeedback = (id) => {
@@ -70,6 +70,7 @@ export const FeedbackProvider = ({children}) => {
         deleteFeedback: deleteFeedback,
         addFeedback: addFeedback,
         editFeedback: editFeedback,
+        isLoading: isLoading,
         feedbackEdit: feedbackEdit,
         updateFeedback: updateFeedback,
     }}>
