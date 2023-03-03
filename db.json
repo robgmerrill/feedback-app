@@ -6,13 +6,8 @@
       "text": "This is feedback 1 from DB"
     },
     {
-      "id": 3,
-      "rating": 9,
-      "text": "This is feedback 3 from DB"
-    },
-    {
-      "text": "sdfsdsfgsfgdsfg",
-      "rating": 8,
+      "text": "This is updated text",
+      "rating": 5,
       "id": 4
     }
   ]
